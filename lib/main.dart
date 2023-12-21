@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_firebase/features/app/splash_screen/splash_screen.dart';
+import 'package:flutter_firebase/features/user_auth/presentation/pages/login_page.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,12 +24,13 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Center(
-          child: Text('This is my flutter Firebase App'),
-        ),
-      ),
-    );
+        debugShowCheckedModeBanner: false,
+        home: SplashScreen(child: LoginPage())
+        // Scaffold(
+        //   body: Center(
+        //     child: Text('This is my flutter Firebase App'),
+        //   ),
+        // ),
+        );
   }
 }
